@@ -9,6 +9,7 @@ access_token = '125627409-tjCdFyi9VDGi7Doug0Adt2A5uxlyDSxO4Z8YQMUv'
 access_token_secret = 'zjv0qipatsyeGnG5kGLcMzlQpfFBcP1ZvpFxQ4URpULBr'
 
 fall = open('all.txt', 'w+')
+fallj = open('all.json', 'w+')
 
 totalnum=long(0)
 
@@ -26,6 +27,7 @@ class StdOutListener(tweepy.StreamListener):
 	newline = '\n\n' 
 	ctime = datetime.now().time()
 	fall.write(string+newtab+str(ctime)+newline)
+	fallj.write(str(tweet))
 	totalnum +=1
 	print str(totalnum)+" tweet(s) so far."
 	return True
